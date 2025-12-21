@@ -1,0 +1,7 @@
+node_modules/
+dist/
+__data__/collections/*.json
+__workspace__/
+.env.local
+*.log
+.DS_Store
