@@ -1,0 +1,688 @@
+{
+    "info": {
+        "name": "EmfraCI Backend API",
+        "description": "Complete API collection for EmfraCI - Jenkins-inspired CI/CD automation backend",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "version": "1.0.0"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3001",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/health",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "health"
+                    ]
+                },
+                "description": "Check if the server is running"
+            }
+        },
+        {
+            "name": "Folders",
+            "item": [
+                {
+                    "name": "Get All Folders",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/folders",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "folders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Folder by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/folders/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "folders",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "folder-id-here"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Folder",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"My Folder\",\n  \"description\": \"A folder for organizing jobs\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/folders",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "folders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Subfolder",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Subfolder\",\n  \"description\": \"A nested folder\",\n  \"parentFolderId\": \"parent-folder-id-here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/folders",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "folders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Folder",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Updated Folder Name\",\n  \"description\": \"Updated description\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/folders/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "folders",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "folder-id-here"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Folder",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/folders/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "folders",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "folder-id-here"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Jobs",
+            "item": [
+                {
+                    "name": "Get All Jobs",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/jobs",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "jobs"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Job by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/jobs/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "jobs",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "job-id-here"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Job (Pipeline)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"My Pipeline Job\",\n  \"type\": \"pipeline\",\n  \"projectId\": \"project-id-here\",\n  \"pipelineId\": \"pipeline-id-here\",\n  \"branch\": \"main\",\n  \"maxRunsToKeep\": 10\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/jobs",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "jobs"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Job (Multibranch)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"My Multibranch Job\",\n  \"type\": \"multibranch\",\n  \"folderId\": \"folder-id-here\",\n  \"projectId\": \"project-id-here\",\n  \"pipelineId\": \"pipeline-id-here\",\n  \"branch\": \"*\",\n  \"maxRunsToKeep\": 20\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/jobs",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "jobs"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Job",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Updated Job Name\",\n  \"branch\": \"develop\",\n  \"maxRunsToKeep\": 15\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/jobs/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "jobs",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "job-id-here"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Job",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/jobs/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "jobs",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "job-id-here"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Credentials",
+            "item": [
+                {
+                    "name": "Get All Credentials",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Credential by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "credential-id-here"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create SSH Key (with file)",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "identifier",
+                                    "value": "github-ssh-key",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "ssh_key_with_username",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "git",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "src": []
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        },
+                        "description": "Upload SSH key file. Select a file in the 'file' field."
+                    }
+                },
+                {
+                    "name": "Create SSH Key (with value)",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "identifier",
+                                    "value": "github-ssh-inline",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "ssh_key_with_username",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "git",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "-----BEGIN OPENSSH PRIVATE KEY-----\nYOUR_KEY_CONTENT_HERE\n-----END OPENSSH PRIVATE KEY-----",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        },
+                        "description": "Create SSH key with inline content (no file upload)"
+                    }
+                },
+                {
+                    "name": "Create Git Credentials",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "identifier",
+                                    "value": "github-token",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "git",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "myusername",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "ghp_your_github_token_here",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Secret File",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "identifier",
+                                    "value": "api-secret-file",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "secret_file",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "src": []
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        },
+                        "description": "Upload a secret file. Select a file in the 'file' field."
+                    }
+                },
+                {
+                    "name": "Create Secret Text",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "identifier",
+                                    "value": "api-key",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "secret_text",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "my-secret-api-key-value",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Certificate",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "identifier",
+                                    "value": "ssl-certificate",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "certificate",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "src": []
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials"
+                            ]
+                        },
+                        "description": "Upload a certificate file. Select a .pem or .crt file in the 'file' field."
+                    }
+                },
+                {
+                    "name": "Update Credentials",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"identifier\": \"updated-identifier\",\n  \"value\": \"updated-value\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "credential-id-here"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Credentials",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/credentials/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "credentials",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "credential-id-here"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "emfraci-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Jenkins-inspired CI/CD automation backend",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write ."
+  },
+  "keywords": [
+    "ci",
+    "cd",
+    "automation",
+    "jenkins"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/multipart": "^9.3.0",
+    "@sinclair/typebox": "^0.32.15",
+    "async-mutex": "^0.5.0",
+    "dotenv": "^16.4.1",
+    "fastify": "^5.6.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "@types/node": "^20.11.16",
+    "@types/uuid": "^9.0.8",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
