@@ -20,12 +20,8 @@
                 "header": [],
                 "url": {
                     "raw": "{{baseUrl}}/health",
-                    "host": [
-                        "{{baseUrl}}"
-                    ],
-                    "path": [
-                        "health"
-                    ]
+                    "host": ["{{baseUrl}}"],
+                    "path": ["health"]
                 },
                 "description": "Check if the server is running"
             }
@@ -40,13 +36,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/folders",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "folders"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "folders"]
                         }
                     }
                 },
@@ -57,14 +48,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/folders/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "folders",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "folders", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -90,13 +75,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/folders",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "folders"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "folders"]
                         }
                     }
                 },
@@ -116,13 +96,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/folders",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "folders"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "folders"]
                         }
                     }
                 },
@@ -142,14 +117,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/folders/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "folders",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "folders", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -166,14 +135,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/folders/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "folders",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "folders", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -195,13 +158,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/jobs",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "jobs"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "jobs"]
                         }
                     }
                 },
@@ -212,14 +170,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/jobs/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "jobs",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "jobs", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -245,13 +197,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/jobs",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "jobs"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "jobs"]
                         }
                     }
                 },
@@ -271,13 +218,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/jobs",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "jobs"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "jobs"]
                         }
                     }
                 },
@@ -297,14 +239,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/jobs/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "jobs",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "jobs", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -321,14 +257,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/jobs/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "jobs",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "jobs", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -350,13 +280,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         }
                     }
                 },
@@ -367,14 +292,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -416,13 +335,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         },
                         "description": "Upload SSH key file. Select a file in the 'file' field."
                     }
@@ -459,13 +373,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         },
                         "description": "Create SSH key with inline content (no file upload)"
                     }
@@ -502,13 +411,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         }
                     }
                 },
@@ -539,13 +443,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         },
                         "description": "Upload a secret file. Select a file in the 'file' field."
                     }
@@ -577,13 +476,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         }
                     }
                 },
@@ -614,13 +508,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials"
-                            ]
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials"]
                         },
                         "description": "Upload a certificate file. Select a .pem or .crt file in the 'file' field."
                     }
@@ -641,14 +530,8 @@
                         },
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials", ":id"],
                             "variable": [
                                 {
                                     "key": "id",
@@ -665,14 +548,8 @@
                         "header": [],
                         "url": {
                             "raw": "{{baseUrl}}/api/credentials/:id",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "credentials",
-                                ":id"
-                            ],
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "credentials", ":id"],
                             "variable": [
                                 {
                                     "key": "id",

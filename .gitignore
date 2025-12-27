@@ -140,6 +140,7 @@ vite.config.ts.timestamp-*
 node_modules/
 dist/
 __data__
+__cache__
 __data__/collections/*.json
 __workspace__/
 .env.local

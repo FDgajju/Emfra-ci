@@ -10,10 +10,7 @@ import { env } from '../constants/env';
  * @param identifier - Credential identifier for filename prefix
  * @returns The saved file path relative to credentialsPath
  */
-export async function saveCredentialFile(
-    file: MultipartFile,
-    identifier: string,
-): Promise<string> {
+export async function saveCredentialFile(file: MultipartFile, identifier: string): Promise<string> {
     const timestamp = Date.now();
     const sanitizedFilename = file.filename.replace(/[^a-zA-Z0-9.-]/g, '_');
     const filename = `${identifier}_${timestamp}_${sanitizedFilename}`;
@@ -22,7 +19,7 @@ export async function saveCredentialFile(
     // Save file
     await pipeline(file.file, createWriteStream(filePath));
 
-    return filename; // Return just the filename, not full path
+    return filePath; // Return just the filename, not full path
 }
 
 /**

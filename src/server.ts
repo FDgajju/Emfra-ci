@@ -8,7 +8,7 @@ import { initializeDirectories } from './config/initDirectories';
 
 async function startServer() {
     // Initialize required directories
-    initializeDirectories(env.dataPath, env.workspacePath);
+    initializeDirectories(env.dataPath, env.workspacePath, env.cachePath);
     const fastify = Fastify({
         logger: {
             level: env.nodeEnv === 'development' ? 'info' : 'warn',

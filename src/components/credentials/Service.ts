@@ -83,10 +83,7 @@ export class CredentialsService {
 
             case 'certificate':
                 if (!file) {
-                    throw new AppError(
-                        'Certificate file is required',
-                        HTTP_STATUS.BAD_REQUEST,
-                    );
+                    throw new AppError('Certificate file is required', HTTP_STATUS.BAD_REQUEST);
                 }
                 filePath = await saveCredentialFile(file, identifier);
                 break;
@@ -122,6 +119,19 @@ export class CredentialsService {
                 throw new AppError('Credentials not found', HTTP_STATUS.NOT_FOUND);
             }
             return createSuccessResponse(credentials);
+        } catch (error) {
+            return createErrorResponse(error as Error, null);
+        }
+    }
+
+    async getOneCredential(filter: Partial<Credentials>) {
+        try {
+            const credentials = await this.repository.getAll(filter);
+            if (!credentials.length) {
+                throw new AppError('Credentials not found', HTTP_STATUS.NOT_FOUND);
+            }
+
+            return createSuccessResponse(credentials[0]);
         } catch (error) {
             return createErrorResponse(error as Error, null);
         }
@@ -200,3 +210,5 @@ export class CredentialsService {
         }
     }
 }
+
+export const credentialsService = new CredentialsService()

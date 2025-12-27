@@ -16,7 +16,9 @@ export class CredentialsRepository extends BaseRepository<Credentials> {
         super(MODEL_NAMES.CREDENTIALS);
     }
 
-    async getAll(filter?: Partial<Omit<Credentials, 'createdAt' | 'updatedAt'>>): Promise<Credentials[]> {
+    async getAll(
+        filter?: Partial<Omit<Credentials, 'createdAt' | 'updatedAt'>>,
+    ): Promise<Credentials[]> {
         return await this.find(filter);
     }
 

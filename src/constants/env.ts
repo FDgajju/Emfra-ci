@@ -8,11 +8,16 @@ export const env = {
     nodeEnv: process.env.NODE_ENV || 'development',
     dataPath: path.resolve(process.env.DATA_PATH || '__data__'),
     workspacePath: path.resolve(process.env.WORKSPACE_PATH || '__workspace__'),
+    cachePath: path.resolve(process.env.CACHE_PATH || '__cache__'),
     // Derived paths - automatically set inside dataPath
     get collectionsPath() {
         return path.join(this.dataPath, 'collections');
     },
     get credentialsPath() {
         return path.join(this.dataPath, 'credentials');
+    },
+
+    get pipelinePath() {
+        return path.join(this.dataPath, 'pipelines');
     },
 };

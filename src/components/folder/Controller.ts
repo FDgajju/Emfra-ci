@@ -28,10 +28,7 @@ export class FolderController {
     }
 
     @CatchHandler
-    async getById(
-        request: FastifyRequest<{ Params: { id: string } }>,
-        reply: FastifyReply,
-    ) {
+    async getById(request: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
         const { id } = request.params;
         const response = await this.service.getFolderById(id);
 
@@ -46,10 +43,7 @@ export class FolderController {
     }
 
     @CatchHandler
-    async create(
-        request: FastifyRequest<{ Body: CreateFolderDto }>,
-        reply: FastifyReply,
-    ) {
+    async create(request: FastifyRequest<{ Body: CreateFolderDto }>, reply: FastifyReply) {
         const response = await this.service.createFolder(request.body);
 
         if (!response.status) {
@@ -81,10 +75,7 @@ export class FolderController {
     }
 
     @CatchHandler
-    async delete(
-        request: FastifyRequest<{ Params: { id: string } }>,
-        reply: FastifyReply,
-    ) {
+    async delete(request: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
         const { id } = request.params;
         const response = await this.service.deleteFolder(id);
 

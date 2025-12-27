@@ -52,10 +52,7 @@ export class FolderService {
         }
     }
 
-    async updateFolder(
-        id: string,
-        data: UpdateFolderDto,
-    ): Promise<ServiceResponse<Folder | null>> {
+    async updateFolder(id: string, data: UpdateFolderDto): Promise<ServiceResponse<Folder | null>> {
         try {
             const existingFolder = await this.repository.getById(id);
             if (!existingFolder) {
@@ -66,10 +63,7 @@ export class FolderService {
             if (data.parentFolderId) {
                 // Prevent circular references
                 if (data.parentFolderId === id) {
-                    throw new AppError(
-                        'Folder cannot be its own parent',
-                        HTTP_STATUS.BAD_REQUEST,
-                    );
+                    throw new AppError('Folder cannot be its own parent', HTTP_STATUS.BAD_REQUEST);
                 }
 
                 const parentFolder = await this.repository.getById(data.parentFolderId);
